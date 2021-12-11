@@ -36,10 +36,12 @@ class MainActivity : AppCompatActivity() {
 
         val redDiceImage: ImageView = findViewById(R.id.imageView)
         val diceImage: ImageView = findViewById(R.id.imageView2)
+        val textView: TextView = findViewById(R.id.textView)
 
         val imageView = arrayOf(redDiceImage, diceImage)
 
         var i = 0
+        var count = 0
         /** Cyklus pro výběr obrázku kostky */
         for(toss in rollDice) {
 
@@ -54,7 +56,8 @@ class MainActivity : AppCompatActivity() {
 
             imageView[i].setImageResource(redDice)
             i++
+            count = count + toss
         }
-
+        textView.text = "Součet hozený kostkami je: ${count}"
     }
 }
